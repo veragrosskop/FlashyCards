@@ -76,8 +76,7 @@ implementing new features and will merge these into this repository as soon as t
 project_apps/
 ├── core/              # Base templates, global layout
 ├── cards/             # Flashcards & decks
-├── study/             # Study sessions, quiz logic
-├── calendar_tracker/  # Study tracking
+├── games/             # Study sessions, quiz logic
 ├── achievements/      # Gamification system
 ├── users/             # Authentication & profiles
 ```
