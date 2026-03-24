@@ -1,0 +1,27 @@
+/* Base styles for navigation bar */
+nav {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Link styles */
+nav a {
+  text-decoration: none;
+  background-color: transparent;
+  color: var(--primary-color);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover state using accent color */
+nav a:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}

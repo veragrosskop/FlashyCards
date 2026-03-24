@@ -23,4 +23,9 @@ urlpatterns = [
 
     #core app URLs
     path("", include("apps.core.urls")),
+    path("achievements/", include("apps.achievements.urls")),
+    path("cards/", include("apps.cards.urls")),
+    path("accounts/", include("apps.users.urls")),
+    path("games/", include("apps.games.urls")),
+
 ]

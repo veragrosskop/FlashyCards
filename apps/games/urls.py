@@ -1,5 +1,3 @@
-# core/urls.py
-
 from django.urls import path
 # from django.contrib.auth.decorators import login_required
 # from django.utils.decorators import method_decorator
@@ -7,8 +5,9 @@ from django.urls import path
 # #from django.views.generic import TemplateView
 from . import views
 
-app_name = 'core'
+app_name = 'games'
 
 urlpatterns = [
-    path("", views.home, name="home"),
+    path("study/", views.study, name="study"),
+    path("quiz/", views.quiz, name="quiz"),
 ]

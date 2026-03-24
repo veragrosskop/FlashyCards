@@ -1,0 +1,68 @@
+/* Top navigation bar */
+body {
+    background-color: var(--color-background);
+}
+
+.navbar {
+  display: flex;
+  background-color:var(--color-background);
+}
+
+/* Navigation bar links */
+.navbar a {
+  color: var(--color-primary);
+  padding: 5px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+/* Column container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/* Main column */
+.main {
+  flex: 3;
+  background-color: var(--color-background);
+  padding: 20px;
+}
+
+/* Sidebar/right column */
+.side {
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+  background-color: var(--color-light);
+  padding: 30px;
+  color: var(--color-background);
+}
+
+/* TODO! Fake image, just for this example */
+.fakeimg {
+  background-color:var(--color-background);
+  color: var(--color-light);
+  width: 80%;
+  padding: 20px;
+}
+
+
+/* Footer */
+footer {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive layout, if screen < 700px -> stack layout */
+@media screen and (max-width: 700px) {
+  .container, .navbar {
+    flex-direction: column;
+  }

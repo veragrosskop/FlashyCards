@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+
+{% extends "shared/base.html" %}
+{% block title %}Home | Flashcard App{% endblock %}
+
+{% block content %}
+        <h1>FlashyCards</h1>
+        <h2>Flashcards for polyglots.</h2>
+        <h3>Track, plan, and master your learning!</h3>
+        <p>You can do it!</p>
+
+    {% comment %} {% if user.is_authenticated %}
+        <p>Start studying from your <a href="{% url 'studying:review' %}">review session</a>.</p>
+    {% else %}
+        <p><a href="{% url 'users:login' %}">Log in</a> or <a href="{% url 'users:signup' %}">sign up</a> to begin.</p>
+    {% endif %} {% endcomment %}
+{% endblock %}

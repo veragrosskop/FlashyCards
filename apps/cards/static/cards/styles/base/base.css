@@ -1,0 +1,57 @@
+/* Custom CSS */
+
+:root {
+    /* background: #EEAECA; */
+    /* background: radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%); */
+    --primary-color: #FF2C2C;
+    --primary-accent: #FD6C83;
+    --secondary-color: #091246;
+    --secondary-accent: #29D1D1;
+    --bg-accent: #B9D4DB;
+    --bg-color: #C8B9B6;
+    --text: #212121;
+    --text-light: #585858;
+    --code: #d81b60;
+    --preformatted: #444;
+}
+body {
+    background: var(--bg-color);
+    background: radial-gradient(circle,var(--bg-color) 0%, var(--bg-accent) 100%);
+    color: var(--primary-color);
+}
+article {
+    background-color:  transparent;
+    /* border: 0px solid var(--border); */
+    /* border-radius: 0px; */
+    padding: 1em;
+    margin: 1em 0;
+    border: none;
+}
+
+h2 {
+    text-align: center;
+}
+
+h2, h4 {
+    margin-top: 0;
+}
+
+hr {
+    background: var(--bg-accent);
+    /* border-color: var(--accent); */
+}
+
+button,
+a[role="button"] {
+    background-color: var(--bg-accent);
+    color: var(--secondary-color);
+    /* border-color: var(--accent); */
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+input, select, textarea {
+    width: 100%;
+}

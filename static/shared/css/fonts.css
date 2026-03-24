@@ -1,0 +1,29 @@
+h1 {
+    font-family: Georgia, serif;
+    font-size: 60px;
+    color: var(--color-primary);
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: 40px;
+    color: var(--color-primary);
+}
+
+h3 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    color: var(--color-primary);
+}
+
+h4{
+    font-family: Verdana, sans-serif;
+    font-size: 20px;
+    color: var(--color-primary);
+}
+
+body{
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+  color: var(--color-light);
+}

@@ -1,0 +1,11 @@
+/* main.css */
+
+/* Base styles */
+@import url('./base/_base.css');
+@import url('./components/flashcard.css');
+
+
+/* Layout */
+@import url('./layout/_header.css');
+
+/* Global styles */

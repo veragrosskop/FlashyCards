@@ -1,0 +1,142 @@
+/* || STATIC STYLLE */
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+
+.card-box-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.box-label {
+    min-width: 120px;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    flex-grow: 1;
+}
+
+.static-card{
+    width: 150px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.23);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.6px);
+    -webkit-backdrop-filter: blur(10.6px);
+    color: var(--secondary-color)
+}
+
+
+
+/* || DYNAMIC STYLE */
+
+
+.flip-card {
+  perspective: 1000px;
+  width: 500px;
+  height: 500px;
+  margin: 2rem auto;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+}
+
+/* This keeps the inner container centered when flipped */
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden; /* important for masking */
+
+  /* Base color */
+  background-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* BACK OVERRIDE */
+.flip-card-back {
+  background-color: var(--secondary-color);
+  color: var(--secondary-color);
+  transform: rotateY(180deg);
+}
+
+.flip-card-front {
+  transform: rotateY(0deg);
+}
+
+/* Masked Accent Layer */
+.flip-card-front::before,
+.flip-card-back::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  /* Apply the mask only to the accent layer */
+  -webkit-mask-image: url('../../images/Mask_Circle_Grainy.png');
+  mask-image: url('../../images/Mask_Circle_Grainy.png');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: cover;
+  mask-size: 75%;
+
+  pointer-events: none;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+
+/* Masked Accent Layer — Front */
+.flip-card-front::before {
+  background-color: var(--secondary-color); /* orange by default */
+}
+
+/* Masked Accent Layer — Back */
+.flip-card-back::before {
+  background-color: var(--primary-color); /* purple by default */
+}
+
+/* Content stays readable above */
+.flip-card-front > *,
+.flip-card-back > * {
+  z-index: 1;
+  position: relative;
+}

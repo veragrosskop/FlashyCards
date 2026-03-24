@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}FlashyCards{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% load static %}
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="{% static 'shared/css/variables.css' %}">
+    <link rel="stylesheet" href="{% static 'shared/css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'shared/css/base.css' %}">
+
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    <!-- Container for columns -->
+    <div class="container">
+
+        <div class="main">
+            {% include "partials/navbar.html" %}
+            <!-- Main content comes here-->
+            {% block content %} {% endblock %}
+        </div>
+
+
+        <div class="side">
+
+            <!-- User profile will be visible here, replace with user app content -->
+            <h2>User profile</h2>
+            <h5>Photo of me:</h5>
+            <div class="fakeimg" style="height:200px;">Image</div>
+            <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+            <h3>More Text</h3>
+            <p>Lorem ipsum dolor sit ame.</p>
+            <div class="fakeimg" style="height:60px;">Image</div><br>
+            <div class="fakeimg" style="height:60px;">Image</div><br>
+            <div class="fakeimg" style="height:60px;">Image</div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+      <p> Made by Vera Großkop, 2026</p>
+    </footer>
+
+</body>
+</html>
+
+
