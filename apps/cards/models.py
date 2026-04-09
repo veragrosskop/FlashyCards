@@ -124,7 +124,8 @@ class HierarchyType(models.TextChoices):
 class HierarchyItem(models.Model):
     """A class which can be defined as any of the HierarchyTypes."""
 
-    title = models.CharField(max_length=255)
+    # TODO! enforce hierarchy of HierarchyTypes
+    name = models.CharField(max_length=255)
     type = models.CharField(
         max_length=20, choices=HierarchyType.choices, default=HierarchyType.SOURCE
     )
@@ -133,37 +134,13 @@ class HierarchyItem(models.Model):
     )
 
     def __str__(self):
-        return f"{self.title} ({self.type})"
-
-
-class Source(HierarchyItem):
-    type = "SOURCE"
-
-
-class Volume(HierarchyItem):
-    type = "VOLUME"
-
-
-class Unit(HierarchyItem):
-    type = "UNIT"
-
-
-class Chapter(HierarchyItem):
-    type = "CHAPTER"
-
-
-class Section(HierarchyItem):
-    type = "SECTION"
-
-
-class Subsection(HierarchyItem):
-    type = "SUBSECTION"
+        return f"{self.name} ({self.type})"
 
 
 class Deck(models.Model):
     """A deck holds cards and can belong to any Hierarchy level."""
 
-    title = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
     parent = models.ForeignKey(
         HierarchyItem,
         null=True,
@@ -182,12 +159,12 @@ class Deck(models.Model):
     )
 
     def __str__(self):
-        return f"{self.title} (Deck under {self.parent})"
+        return f"{self.name} (Deck under {self.parent})"
 
     class Meta:
         constraints = [
             models.UniqueConstraint(
-                fields=["title", "parent"], name="unique_deck_per_parent"
+                fields=["name", "parent"], name="unique_deck_per_parent"
             )
         ]
 
@@ -217,7 +194,7 @@ class Card(models.Model):
     box_ntf = models.IntegerField(choices=zip(BOXES, BOXES), default=BOXES[0])
     box_ftn = models.IntegerField(choices=zip(BOXES, BOXES), default=BOXES[0])
 
-    sources = models.ManyToManyField(Source, blank=True)
+    decks = models.ManyToManyField(Deck, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
 
     # deck = models.ForeignKey('decks.Deck', on_delete=models.CASCADE, related_name='cards')

@@ -1,8 +1,43 @@
 <!-- cards/templates/cards/base.html -->
 {% extends "shared/base.html" %}
 {% load static %}
+{% block title %}Cards{% endblock %}
+ {% block extra_css %}
+    <link rel="stylesheet" href="{% static 'cards/styles/components/treeview.css' %}">
+    <link rel="stylesheet" href="{% static 'cards/styles/components/cards_table.css' %}">
+{% endblock %}
 
 {% block content %}
-<h2>This is the Cards app.</h2>
-<p> It's still under construction...</p>
-{% endblock content %}
+
+    <h2>All my Decks.</h2>
+    <p> It's still under construction...</p>
+
+    <div class="tree-wrapper">
+        <!-- LEFT: DECK TREE VIEW  -->
+        <div class="tree" id="tree"></div>
+
+        <!-- RIGHT: DECK DETAILS VIEW  -->
+        <template id="cards-table-template">
+            <table class="cards-table">
+                <thead>
+                    <tr>
+                        <th>Native</th>
+                        <th>Foreign</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </template>
+        <div class="tree-details" id="tree-details">
+            <h2>Select a deck</h2>
+            <p>Click a deck to see its cards.</p>
+        </div>
+    </div>
+
+    <!-- DJANGO DATA TO JSON  -->
+    {{ tree|json_script:"tree-data" }}
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'cards/js/treeview.js' %}"></script>
+{% endblock %}

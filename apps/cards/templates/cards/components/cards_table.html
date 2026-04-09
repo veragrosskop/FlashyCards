@@ -1,0 +1,16 @@
+<table class="cards-table">
+    <thead>
+        <tr>
+            <th>Native</th>
+            <th>Foreign</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for card in cards %}
+        <tr>
+            <td>{{ card.native }}</td>
+            <td>{{ card.foreign }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

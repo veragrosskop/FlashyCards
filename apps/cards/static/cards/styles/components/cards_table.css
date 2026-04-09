@@ -1,0 +1,47 @@
+/* cards_table.css */
+
+/* Table container */
+.cards-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-top: 10px;
+}
+
+/* Table header */
+.cards-table thead th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+/* Table rows */
+.cards-table tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.9rem;
+}
+
+/* Even rows */
+.cards-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect */
+.cards-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Optional: first column bold */
+.cards-table tbody td:first-child {
+    font-weight: 500;
+}
+
+/* Optional: responsive font */
+@media (max-width: 600px) {
+    .cards-table {
+        font-size: 0.8rem;
+    }
+}

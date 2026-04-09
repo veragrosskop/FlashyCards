@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import Source, Volume, Deck, Card
+from .models import Deck, Card, HierarchyItem
 
-admin.site.register(Source)
-admin.site.register(Volume)
+admin.site.register(HierarchyItem)
 admin.site.register(Deck)
 admin.site.register(Card)
