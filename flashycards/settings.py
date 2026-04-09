@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = credentials.get("django_secret_key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = credentials.get('debug')
+DEBUG = credentials.get("debug")
 
-ALLOWED_HOSTS = credentials.get('allowed_hosts', [])
+ALLOWED_HOSTS = credentials.get("allowed_hosts", [])
 
 
 # Application definition
@@ -62,9 +62,7 @@ ROOT_URLCONF = "flashycards.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [
-            BASE_DIR / "templates"
-        ],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -83,11 +81,11 @@ WSGI_APPLICATION = "flashycards.wsgi.application"
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-    # "default": dj_database_url.parse(
-    #     os.environ.get("DATABASE_URL"),
-    #     conn_max_age=600,
-    #     ssl_require=True
-    # )
+    "default": dj_database_url.parse(
+        os.environ.get("DATABASE_URL") or f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
+        conn_max_age=600,
+        ssl_require=not DEBUG,
+    )
 }
 
 
@@ -133,4 +131,4 @@ STATICFILES_DIRS = [
 
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
-X_FRAME_OPTIONS = 'DENY'
+X_FRAME_OPTIONS = "DENY"
