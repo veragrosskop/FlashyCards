@@ -9,10 +9,12 @@ I wanted to offer a gamified free approach, with a full set of study tools.
 Anything I'd want myself.
 
 ---
-## ⚠️ This website is in active development
-Please refer for an overview of the features that I'm currently implementing below.
-I've worked on this app over the last years as a personal project and am currently in the process of refactoring code,
-implementing new features and will merge these into this repository as soon as they are completed. 
+>## ⚠️ This website is in active development
+>
+>Please refer for an overview of the features that I'm currently implementing below.
+>I've worked on this app over the last years as a personal project and am currently in the process of refactoring code,
+>implementing new features and will merge these into this repository as soon as they are completed. 
+
 ---
 ## 🚀 Features
 
